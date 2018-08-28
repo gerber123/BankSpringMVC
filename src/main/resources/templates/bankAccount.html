@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank member</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <p th:text="'Imie: '+${bankAccount.name}"></p>
+    <p th:text="'Nazwisko: '+${bankAccount.surname}"></p>
+    <p th:text="'Wiek: '+${bankAccount.age}"></p>
+    <p th:text="'Środki na Koncie: '+${bankAccount.cashAmount}"></p>
+    <p th:text="'Hasło do konta: '+${bankAccount.password}"></p>
+    <p th:text="'Zawarta Lokata : '+${bankAccount.locate}"></p>
+    <td><a th:href="${'bankAccount?id='+bankAccount.id}">Zrób przelew</a></td>
+</div>
+</body>
+</html>

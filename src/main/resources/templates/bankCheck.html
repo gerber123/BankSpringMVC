@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register Account</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+
+        <!--<p th:text="'Imie: '+${bankCheck.name}"></p>-->
+        <!--<p th:text="'Nazwisko: '+${bankAccount.surname}"></p>-->
+        <!--<p th:text="'Wiek: '+${bankAccount.age}"></p>-->
+        <!--<p th:text="'Środki na Koncie: '+${bankAccount.cashAmount}"></p>-->
+        <!--<p th:text="'Hasło do konta: '+${bankAccount.password}"></p>-->
+
+
+    <!--<form class="form-horizontal" th:object="${bankAccount}" th:action="@{/bankCheck}" th:method="get">-->
+
+
+        <div class="form-group">
+            <td th:text="'Nazwa użytkownika : '+${bankAccount.name}"></td>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label">Haslo: </label>
+            <input type="text" class="form-control" th:field="${bankAccount.checkPassword}"/>
+        </div>
+    <div class="row">
+        <button id="open" type="button" value="/bankCheck" class="btn btn-warning">CHUJ</button>
+    </div>
+    <!--</form>-->
+</div>
+</body>
+</html>

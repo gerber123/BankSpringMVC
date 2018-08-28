@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Accounts</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Id użytkownika</td>
+            <td>Imie</td>
+            <td>Nazwisko</td>
+            <td>Lokata</td>
+        </tr>
+        </thead>
+        <tbody th:each="bankAccount : ${bankAccounts}">
+        <tr>
+            <td th:text="${bankAccount.id}"></td>
+            <td th:text="${bankAccount.name}"></td>
+            <td th:text="${bankAccount.surname}"></td>
+            <td>
+                <span th:if="${bankAccount.locate==null}" > Brak lokaty <a th:href="${'/assignLocate?accountId='+bankAccount.id}"> Załóz lokate </a></span>
+                <span th:if="${bankAccount.locate!=null}" th:text="${bankAccount.locate.description}"/>
+            </td>
+            <td><a th:href="${'bankAccount?id='+bankAccount.id}">Podgląd</a></td>
+            <td><a th:href="${'bankCheck?id='+bankAccount.id}">Operacje</a></td>
+        </tr>
+        </tbody>
+        <div class="row">
+            <a href="/newAccount">Załóż nowe konto</a>
+        </div>
+    </table>
+</div>
+</body>
+</html>
